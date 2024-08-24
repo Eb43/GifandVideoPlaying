@@ -12,14 +12,17 @@ https://github.com/Eb43/GifandVideoPlaying/blob/main/GifandVideoPlaying.apk
 ## Notes
 
 Android needs additional libraries to be used to display animated GIF. The GIF is loaded into the ImageView using Glide
-        ```
+
+```
         ImageView prebuiltImage = findViewById(R.id.prebuiltImage);
         Glide.with(this)
                 .asGif()
                 .load(R.drawable.img) // Ensure img.gif is placed in the res/drawable folder
                 .into(prebuiltImage);
 ```
+
 In /app/build.gradle.kts the dependencies block should include Glide libraries
+
 ```
 dependencies {
     implementation(libs.appcompat)
@@ -31,7 +34,9 @@ dependencies {
     androidTestImplementation(libs.espressoCore)
 }
 ```
+
 Such notation of the dependencies requires the dependencies to be specified in /gradle/libs.versions.toml
+
 ```
 [versions]
 agp = "8.3.0"
